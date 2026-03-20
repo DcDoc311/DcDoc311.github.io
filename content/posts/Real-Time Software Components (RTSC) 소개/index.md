@@ -1,7 +1,7 @@
 ---
 title: Real-Time Software Components (RTSC) 소개
 date: 2026-03-09
-draft : true
+draft : false
 categories:
   - Embedded
 tags:
