@@ -1,0 +1,51 @@
+baseURL = "https://YOUR_GITHUB_ID.github.io/"
+languageCode = "en-us"
+title = "Just Do"
+theme = "PaperMod"
+
+[pagination]
+	paginate = 10
+
+[params]
+  env = "production"
+  description = "Low-level, Embedded, Linker notes"
+  author = "LEE"
+
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  ShowTags = true
+  ShowCategories = true
+  TocOpen = false
+  mainSections = ["posts"]
+  
+[menu]
+  [[menu.main]]
+    name = "Posts"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Categories"
+    url = "/categories/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Tags"
+    url = "/tags/"
+    weight = 3
+  
+[params.homeInfoParams]
+  Title = "Welcome"
+  Content = "Technical notes on embedded systems, linkers, and algorithms."
+
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>RTOS on Just Do</title>
+    <link>http://localhost:1313/tags/rtos/</link>
+    <description>Recent content in RTOS on Just Do</description>
+    <generator>Hugo -- 0.154.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/rtos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Real-Time Software Components (RTSC) 소개</title>
+      <link>http://localhost:1313/posts/real-time-software-components-rtsc-%EC%86%8C%EA%B0%9C/</link>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/real-time-software-components-rtsc-%EC%86%8C%EA%B0%9C/</guid>
+      <description>&lt;p&gt;이 글은 TI XDCTools와 SYS/BIOS의 구성을 공부하는 과정에서 시작되었습니다. XDCTools를 학습하던 중 RTSC라는 개념에 대해 궁해졌고, 이를 정리하기 위해 아래 출처를 기반으로 정리했습니다. 다만, 현재 RTSC 개념은 안타깝게도 개발자들에게 선택 받지 못한 것으로 보입니다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;XDCtools를 사용하는 주요 TI DSP 
+TMS320C6000 시리즈
+TMS320C2000 시리즈
+KeyStone 멀티코어 아키텍처
+Sitara 프로세서
+OMAP/DaVinci 시리즈
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;출처 / Source: &lt;a href=&#34;https://rtsc.eclipse.org/docs-tip/Introducing_RTSC&#34;&gt;RTSC-Pedia — Introducing RTSC&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;1-rtsc-배경&#34;&gt;1. RTSC 배경&lt;/h1&gt;
+&lt;h2 id=&#34;생산자소비자-딜레마&#34;&gt;생산자/소비자 딜레마&lt;/h2&gt;
+&lt;p&gt;임베디드 C 개발자는 소프트웨어의 &lt;strong&gt;생산자(producer)&lt;/strong&gt; 이자 &lt;strong&gt;소비자(consumer)&lt;/strong&gt; 역할을 동시에 수행합니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

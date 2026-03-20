@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Embedded on Just Do</title>
+    <link>http://localhost:1313/categories/embedded/</link>
+    <description>Recent content in Embedded on Just Do</description>
+    <generator>Hugo -- 0.154.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Mar 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/embedded/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Real-Time Software Components (RTSC) 소개</title>
+      <link>http://localhost:1313/posts/real-time-software-components-rtsc-%EC%86%8C%EA%B0%9C/</link>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/real-time-software-components-rtsc-%EC%86%8C%EA%B0%9C/</guid>
+      <description>&lt;p&gt;이 글은 TI XDCTools와 SYS/BIOS의 구성을 공부하는 과정에서 시작되었습니다. XDCTools를 학습하던 중 RTSC라는 개념에 대해 궁해졌고, 이를 정리하기 위해 아래 출처를 기반으로 정리했습니다. 다만, 현재 RTSC 개념은 안타깝게도 개발자들에게 선택 받지 못한 것으로 보입니다.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;XDCtools를 사용하는 주요 TI DSP 
+TMS320C6000 시리즈
+TMS320C2000 시리즈
+KeyStone 멀티코어 아키텍처
+Sitara 프로세서
+OMAP/DaVinci 시리즈
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;출처 / Source: &lt;a href=&#34;https://rtsc.eclipse.org/docs-tip/Introducing_RTSC&#34;&gt;RTSC-Pedia — Introducing RTSC&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&#34;1-rtsc-배경&#34;&gt;1. RTSC 배경&lt;/h1&gt;
+&lt;h2 id=&#34;생산자소비자-딜레마&#34;&gt;생산자/소비자 딜레마&lt;/h2&gt;
+&lt;p&gt;임베디드 C 개발자는 소프트웨어의 &lt;strong&gt;생산자(producer)&lt;/strong&gt; 이자 &lt;strong&gt;소비자(consumer)&lt;/strong&gt; 역할을 동시에 수행합니다.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>TI Linker Command File Primer</title>
+      <link>http://localhost:1313/posts/ti-linker-command-file-primer/</link>
+      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ti-linker-command-file-primer/</guid>
+      <description>&lt;h1 id=&#34;ti-링커-명령-파일-입문서&#34;&gt;TI 링커 명령 파일 입문서&lt;/h1&gt;
+&lt;h2 id=&#34;소개&#34;&gt;소개&lt;/h2&gt;
+&lt;p&gt;이 글은 대부분의 TI 링커 명령 파일에서 흔히 나타나는 코드를 설명합니다. 이 글은
+&lt;a href=&#34;https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html&#34;&gt;이 글&lt;/a&gt;을 기반으로 작성되었습니다.&lt;/p&gt;
+&lt;h2 id=&#34;링커-명령-파일을-수정하는-이유&#34;&gt;링커 명령 파일을 수정하는 이유&lt;/h2&gt;
+&lt;p&gt;CCS를 설치하고 칩을 선택하는 경우 해당 칩의 링커 명령어 파일을 제공하며, 이는 특별한 이유가 없는 경우 오류 없이 잘 작동합니다. 다만 시스템의 메모리 구성이 변경될 경우 링크 명령어 파일을 변경해야 합니다. 본 문서는 특수한 경우 링커 파일을 수정하는 방법에 대한 간략한 글입니다.&lt;/p&gt;
+&lt;h2 id=&#34;기본사항&#34;&gt;기본사항&lt;/h2&gt;
+&lt;p&gt;링커 명령 파일에는 옵션, 전역 심볼 객체 파일, 라이브러리 등 다양한 항목을 표현할 수 있습니다. 이 문서는 Memory 지시어, 특히 SECTIONS 지시어에 초점을 맞추었습니다. 상세한 링커에 대한 설명은 차후 다른 문서를 통해 정리할 예정입니다.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
