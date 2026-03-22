@@ -11,6 +11,8 @@ theme = "PaperMod"
   description = "Low-level, Embedded, Linker notes"
   author = "LEE"
 
+  googleAnalytics = "G-TQKK5MMCJW"
+  
   defaultTheme = "auto"
   ShowReadingTime = true
   ShowCodeCopyButtons = true
