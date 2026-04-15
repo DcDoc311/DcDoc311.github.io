@@ -8,20 +8,20 @@ tags:
   - TI
 ---
 
-# TI 링커 명령 파일 입문서
+## TI 링커 명령 파일 입문서
 
-## 소개 
+### 소개 
 
-이 글은 대부분의 TI 링커 명령 파일에서 흔히 나타나는 코드를 설명합니다. 이 글은 
-[이 글](https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html)을 기반으로 작성되었습니다. 
-## 링커 명령 파일을 수정하는 이유
+이 글은 대부분의 TI 링커 명령 파일에서 흔히 나타나는 코드를 설명합니다. 
+[아래 문서를](https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html) 기반으로 작성되었습니다. 
+### 링커 명령 파일을 수정하는 이유
 
 CCS를 설치하고 칩을 선택하는 경우 해당 칩의 링커 명령어 파일을 제공하며, 이는 특별한 이유가 없는 경우 오류 없이 잘 작동합니다. 다만 시스템의 메모리 구성이 변경될 경우 링크 명령어 파일을 변경해야 합니다. 본 문서는 특수한 경우 링커 파일을 수정하는 방법에 대한 간략한 글입니다. 
-## 기본사항
+### 기본사항
 
 링커 명령 파일에는 옵션, 전역 심볼 객체 파일, 라이브러리 등 다양한 항목을 표현할 수 있습니다. 이 문서는 Memory 지시어, 특히 SECTIONS 지시어에 초점을 맞추었습니다. 상세한 링커에 대한 설명은 차후 다른 문서를 통해 정리할 예정입니다. 
 
-## 메모리 지시어
+### 메모리 지시어
 
 메모리 지시어의 목적은 메모리 범위에 이름을 할당하는 것입니다. 
 메모리 범위의 이름은 SECTION 지시어에 안에서 사용됩니다. 
@@ -47,21 +47,21 @@ MEMORY
 
 메모리 이름 *RAM*의 시작 위치는 0x1C00 이며 크기는 0x0FFE 크기를 갖는다는 의미입니다.
 이를 통해 우리는 메모리 이름과 시작 위치, 크기를 정의할 수 있으며, 이는 섹션 지시어를 통해 사용됩니다. 
-## 섹션 지시어
+### 섹션 지시어
 
 섹션 지시어에 대부분의 핵심 코드가 포함되어 있습니다. 
 가장 중요한 핵심은 섹션 지시어가 아래 두가지 작업을 동시에 수행한다는 것입니다. 
  - 입력 섹션으로부터 출력 섹션 형성
  - 출력 섹션을 메모리에 할당
 
-### Diagram
+#### Diagram
 
 해당 그림은 섹션 지시어의 작동 방식을 보여줍니다.
 
 ![Link_Diagram](Link_Diagram.png)
 
 Object 파일에서 입력 섹션을 만들고 이는 출력 섹션으로 연결됩니다. 이를 통해 메모리 영역에 코드를 적절히 옮깁니다.
-## Glossary 
+### Glossary 
 
 섹션 지시어를 이해하기 위해서는 위의 용어들을 이해해야합니다. 
 
@@ -70,7 +70,7 @@ Object 파일에서 입력 섹션을 만들고 이는 출력 섹션으로 연결
 - Output Section - 하나 이상의 입력 섹션으로 구성된 집합. 출력 섹션은 섹션 지시어에 이해 형성됨
 - Memory Ranges - 메모리 지시어를 통해 지정된 시스템 메모리의 특정 영역
 
-## 섹션 Naming Conventions
+### 섹션 Naming Conventions
 
 이론적으론 입력 섹션의 이름만으로 의미를 알 수 없으나, 관습적으로 아래와 같이 입력 섹션의 이름이 사용됩니다. 
 
@@ -93,7 +93,7 @@ Object 파일에서 입력 섹션을 만들고 이는 출력 섹션으로 연결
 
 **여기서 초기화는 Linker에 의한 초기화를 의미함, C_init의 초기화와 다름**
 
-## Syntax Note
+### Syntax Note
 
 **SECTIONS** 중괄호 안에 있는 명령어는 모두 섹션 지시어입니다. 
 ```ruby
@@ -103,7 +103,7 @@ SECTIONS
 }
 ```
 
-## 출력 섹션 구성
+### 출력 섹션 구성
 
 SECTIONS 지시어 코드에서 가장 헷갈리는 것은 구문 단축어입니다. 
 아래는 구문 단축어를 사용하지 않은 지시어입니다. 보통의 경우 구문 단축어를 사용하기 때문에 아래와 같이 모든 의미를 내포하는 경우는 찾기 어렵습니다. 따라서 아래의 구문을 눈여겨 보아야합니다. 
@@ -172,7 +172,7 @@ SECTIONS
 이는 *output_section_name* 의 출력 섹션을 생성하며, 첫번째 입력 섹션은 *first.obj* 파일의 *.text* 섹션이며, 나머지 입력 섹션은 다른 모든 object 파일의 *.text* 섹션입니다.
 또한, 이 섹션은 FLASH 메모리 범위에 할당된다는 의미를 가집니다.
 
-##  Output 섹션 메모리 할당
+###  Output 섹션 메모리 할당
 
 ``` ruby
 SECTIONS
@@ -203,7 +203,7 @@ SECTIONS
 ```
 define을 통해 하드코딩된 메모리 범위를 할당할 수도 있습니다.  이는 명명된 메모리 범위가 아닌, 하드코딩된 메모리 범위를 의미합니다. 
 
-## 메모리 범위에 첫 출력 섹션 설정법
+### 메모리 범위에 첫 출력 섹션 설정법
 
 아래 코드는 특정 메모리 범위에 출력 섹션을 명시적으로 설정하는 방법입니다. 
 ```ruby
@@ -227,7 +227,7 @@ SECTIONS
 
 *#define BASE* 는 링커의 C 스타일 전처리 기능의 사용 예시입니다. 이 정의는 FLASH 메모리 범위의 시작점을 설정하는데 사용하지만, *.intvecs* 의 특정 주소를 할당하는데도 사용됩니다. 그렇기에 하드코딩된 주소인 *BASE* 먼저 *.intvecs* 섹션이 먼저 할당됩니다. 
 
-## 여러 메모리 범위 할당
+### 여러 메모리 범위 할당
 
 아래의 코드는 여러 메모리 할당에 대한 예시입니다.
 ```ruby
@@ -244,7 +244,7 @@ SECTIONS
 **즉 입력 섹션은 절대 분할되지 않습니다.**
 이는 함수, 배열, 구조체 등을 중간에 분할할 수 없음을 의미하며, 메모리 범위는 지정된 순서대로 동작합니다. 
 
-## 메모리 페이지
+### 메모리 페이지
 
 메모리 페이지는 C28XX 링커 명령어 파일에서만 동작하는 특이한 지시어입니다.
 ```ruby
@@ -275,7 +275,7 @@ MEMORY
 
 이러한 변칙을 허용하는 이유는 C28XXX의 특이한 역사 때문입니다. C28XX 디바이스는 매우 오래된 C2XXX 디바이스 계보에서 시작되었습니다. 초기 디바이스들은 코드와 데이터를 위한 별도의 메모리 버스를 가졌고, 이 버스들은 물리적으로 분리된 메모리 블록에 연결되었습니다. 따라서 *PAGE0*의 특정 주소가 *PAGE1*의 동일한 주소와 다른 내용을 가질 수 있었고, 이론상 C28XX 디바이스에서도 메모리 버스의 이러한 별도 연결이 가능하지만, 거의 사용되지 않는 기능이 되었습니다. 거의 모든 C28XX 디바이스들이 *PAGE*의 구분없이 메모리가 구성되지만, 메모리 페이지를 사용하는 코드들은 여전히 지속되고 있습니다. 그렇기에 링커 명령어 파일이 *PAGE0*, *PAGE1*을 사용하는 경우 그대로 사용하는 것이 가장 좋습니다. 다만, 위의 예제처럼 사용자가 변경하여 사용하는 것은 권장하지 않습니다.
 
-## 출력 섹션 무력화 (Nullify an Output Section, TYPE = DSECT)
+### 출력 섹션 무력화 (Nullify an Output Section, TYPE = DSECT)
 
 ``` ruby
 	.reset : > RESET, PAGE = 0, TYPE = DSECT    /* not used */
@@ -288,7 +288,7 @@ MEMORY
 *LOAD RUN* 지시어의 상세한 설명은 아래에서 자세히 설명합니다.  
 *DSECT* 와 유사한 특수 섹션에 대한 설명은 [Linker Special Section Types](https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html)  를 참고하시길 바랍니다. 
 
-## ROM 코드 혹은 데이터 참조 (TYPE = NOLOAD)
+### ROM 코드 혹은 데이터 참조 (TYPE = NOLOAD)
 
 ```ruby
 	FPUmathTables : > FPUTABLES, PAGE = 0, TYPE = NOLOAD
@@ -298,7 +298,7 @@ MEMORY
 또한, 링커에게는 해당 범위에 데이터가 있다는 것을 알려 다른 데이터를 배치하지 않도록 합니다. 해당 섹션은 외부의 데이터를 참조할 수 없고 외부의 섹션은 *NOLOAD* 된 섹션을 참조할 수 있습니다.   
 마찬가지로 *NOLOAD* 와 유사한 특수 섹션에 대한 설명은 [Linker Special Section Types](https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html)  를 참고하시길 바랍니다. 
 
-## 서로 다른 메모리 범위에서 LOAD, RUN 
+### 서로 다른 메모리 범위에서 LOAD, RUN 
 
 ```ruby
 	.TI.ramfuncs : LOAD = FLASHD,
@@ -325,7 +325,7 @@ void copy_sections(void) {
 }
 ```
 
-## 라이브러리의 입력 섹션 할당
+### 라이브러리의 입력 섹션 할당
 
 ```ruby
    IQmathTables3 : > IQTABLES3
@@ -347,7 +347,7 @@ void copy_sections(void) {
 **Open References**, 즉 기존의 코드에서 참조하지 못 한 파일만을 가져옵니다.  
 *--library=* 지시어는 이 파일이 현재 폴더에 없으며 라이브러리 경로를 찾도록 링커에게 지시합니다. 이전 예제의 *<>* 지시어는 *--library* 지시어와 같은 효과를 가집니다.
 
-## 그룹 출력 섹션
+### 그룹 출력 섹션
 
 ```ruby
     output_section_1 > RAM
@@ -369,7 +369,7 @@ void copy_sections(void) {
 출력 섹션의 이름은 관습적으로 소문자를 사용하지만, 그렇지 않는 경우도 있다는 것에 항상 유의해야 합니다. 
 이들은 *CTOMRAM* 메모리 범위에 순차적으로 할당됩니다. 주의할 것은 그룹 내의 순서만 보장한다는 것이며 다른 출력 섹션은 메모리 범위에 임의로 그룹과 같이 할당됩니다. 
 
-## 메모리 속성
+### 메모리 속성
 
 ```ruby
 MEMORY
@@ -392,10 +392,10 @@ MEMORY
 
 링커 커맨드 파일에서 이러한 속성은 해당 영역이 어떤 용도로 설계되었는지 명시하는 문서화 용도로 사용되며, 속성의 특성을 강제하지 못 합니다. 
 
-## 마무리
+### 마무리
 이를 통해 간단히 링커 명령어 파일에 대해 알아보았습니다. 시스템 구성 초기에 간혹 링커 파일을 수정한 경험이 있지만, 
 자세히 알지 못하고 사용하였기 때문에 이 글을 작성하게 되었습니다.  
 읽어주셔서 감사합니다.
 
-# 참고
-[https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html]
+## 참고
+- Linker Special Section Types [https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html](https://software-dl.ti.com/ccs/esd/documents/sdto_cgt_linker_special_section_types.html)

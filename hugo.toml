@@ -1,47 +1,24 @@
 baseURL = "https://DcDoc311.github.io/"
 languageCode = "en-us"
-title = "Just Do"
-theme = "PaperMod"
+title = "Below the Line"
+theme = "hextra"
 
 [pagination]
 	paginate = 10
 
 [params]
-  env = "production"
   description = "Low-level, Embedded, Linker notes"
-  author = "LEE"
-
   googleAnalytics = "G-TQKK5MMCJW"
-  
-  defaultTheme = "auto"
-  ShowReadingTime = true
-  ShowCodeCopyButtons = true
-  ShowToc = true
-  ShowTags = true
-  ShowCategories = true
-  TocOpen = false
-  mainSections = ["posts"]
+ 
+[params.author]
+  name = "LEE"
+
   
 [menu]
   [[menu.main]]
-    name = "Posts"
-    url = "/posts/"
+    name = "Docs"
+    url = "/docs/"
     weight = 1
-
-  [[menu.main]]
-    name = "Categories"
-    url = "/categories/"
-    weight = 2
-
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 3
-  
-[params.homeInfoParams]
-  Title = "Welcome"
-  Content = "Technical notes on embedded systems, linkers, and algorithms."
-
 
 [taxonomies]
   category = "categories"
@@ -51,3 +28,7 @@ theme = "PaperMod"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+	  
+  [markup.tableOfContents]
+    startLevel = 0
+    endLevel = 3
