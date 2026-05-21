@@ -567,6 +567,17 @@ end structural;
 **목표:** 4:1 멀티플렉서를 구현하는 완전한 VHDL 모듈
 
 ```vhdl
+library IEEE;
+use IEEE.std_logic_1164.all;
+
+entity mux4to1_8bit is
+port (
+    D0, D1, D2, D3 : in  std_logic_vector(7 downto 0);
+    SEL            : in  std_logic_vector(1 downto 0);
+    Y              : out std_logic_vector(7 downto 0)
+);
+end mux4to1_8bit;
+
 architecture behavioral of mux4to1_8bit is
 begin
     process(D0, D1, D2, D3, SEL)
